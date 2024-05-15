@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js" integrity="sha512-/1uYu3K5HmOTNdhaOt6Rh7qQgLk/zn0kfw4nqNtqbpACxAx2tKp+lXJ4tnx3zn0vMq4n97+1eKI0vfdU0x+NHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>React</title>
+</head>
+<body>
+    <h2>React Demo</h2>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+    <div id="app4"></div>
+
+    <script type="text/babel">
+        // <div>This is a React Element</div>
+        const element1 = React.createElement("div", null, "This is a React Element");
+        ReactDOM.createRoot(document.getElementById("app1")).render(element1);
+
+        //<div> <h4> This is another React element </h4> </div>
+        const element2 = React.createElement("div", null, 
+                                    React.createElement("h4", null, "This is another React element"));
+        ReactDOM.createRoot(document.getElementById("app2")).render(element2);
+
+        //JSX
+        ReactDOM
+            .createRoot(document.getElementById("app3"))
+            .render(<div><h4>This is a JSX element</h4></div>);
+
+        //Component
+        function MyComponent(){
+
+            //return the JSX
+            return <div><h4>This is a React Component</h4> <p> Sample for training</p></div>
+        }
+        ReactDOM
+            .createRoot(document.getElementById("app4"))
+            .render(<MyComponent/>)
+
+
+
+    </script>
+
+</body>
+</html>
