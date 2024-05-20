@@ -1,19 +1,21 @@
-import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../redux/store";
 
-function ViewCart() {
+const ViewCart: React.FC = () => {
 
-    const cart = [];
+    const cart = useSelector((state: RootState) => state.gadgets.cart)
+    
 
-
-    function remove(item) {
-
+    function remove(item: any) {
+       
     }
     return (
         <div>
-            <h3>Cart</h3>
-
+            <h1>View Cart</h1>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {cart.map((item, index) => {
+                   
+
                     return (
                         <div className="col" key={index}>
                             <div className="card bg-light mb-3 border-success">
@@ -32,7 +34,9 @@ function ViewCart() {
                 })}
             </div>
         </div>
+
     );
+
 }
 
 export default ViewCart;

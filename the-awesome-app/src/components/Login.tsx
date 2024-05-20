@@ -49,9 +49,9 @@ function Login(){
     return (
         <div>
             <h4>Login</h4>
-            <div className="alert alert-danger">
+            {error ? <div className="alert alert-danger">
                 {error}
-            </div>
+            </div> : null}
 
             <div className="form-group">
                 <label>Username</label>
