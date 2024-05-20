@@ -36,10 +36,12 @@ function FnCounter(props: FnCounterProps){
                 <button onClick={() => setCounter(counter -1)}>Decr</button>
             </div>
             <div>
+                {/* Controlled input */}
                 Count: <input type="number" placeholder='Counter' 
                                     value={counter} onChange={handleChange}/>
             </div>
             <div>
+                {/* Uncontrolled input */}
                 Enter a value: <input type="number" ref={inputRef}/> &nbsp; 
                 
                 <button onClick={handleUpdate}>Update</button>
