@@ -85,7 +85,7 @@ function ListProducts() {
     async function deleteProduct(product: Product) {
 
         try {
-
+            debugger;
             const response = await axios.delete(`http://localhost:9000/secure_products/${product.id}`);
             alert(`Product with id: ${product.id} deleted`);
             //fetchProductsAsync();
@@ -118,7 +118,8 @@ function ListProducts() {
                 {products.map((item) => {
 
                     return (
-                        <div className='product'>
+                        // <ProductView value{item} onDelete={deleteProduct} onEdit={editProduct}/>
+                        <div className='product' key={item.id}>
                             <p>Id: {item.id}</p>
                             <p>{item.name}</p>
                             <p>{item.price}</p>

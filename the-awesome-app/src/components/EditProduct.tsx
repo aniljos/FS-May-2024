@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ChangeEvent, useEffect, useState, MouseEvent} from 'react';
+import {ChangeEvent, useEffect, useState, MouseEvent, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import { Product } from '../model/Product';
 
@@ -7,11 +7,15 @@ import { Product } from '../model/Product';
 function EditProduct(){
 
     const params = useParams();
-    const [product, setProduct] = useState<Product>(new Product());
+    const [product, setProduct] = useState<Product>(new Product(0, "", 0, ""));
+    const nameInputRef = useRef<HTMLInputElement>(null);
+    
 
     useEffect(() => {
 
+        nameInputRef.current?.focus();
         fetchProduct();
+
 
     }, [])
     async function fetchProduct(){
@@ -60,7 +64,7 @@ function EditProduct(){
             <form>
                 <div className="form-group">
                     <label>Name</label>
-                    <input className="form-control" id="name" 
+                    <input ref={nameInputRef} className="form-control" id="name" 
                                     placeholder="Name" value={product.name}
                                     onChange={handleChangeName}/>
                 </div>

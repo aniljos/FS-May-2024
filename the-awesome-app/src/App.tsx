@@ -18,6 +18,7 @@ function App() {
 
   function switchTheme(){
 
+    debugger;
     themeContext.dispatch!({type: 'TOGGLE_THEME'});
   }
 

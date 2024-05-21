@@ -18,6 +18,7 @@ type AppThemeContextProviderProps = {
 
 const reducer =(state: AppThemeState, action: any)=> {
     
+    debugger;
     if(action.type === 'TOGGLE_THEME'){
         return {
             ...state,

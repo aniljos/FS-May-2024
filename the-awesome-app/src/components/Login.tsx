@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from "react-redux";  
+import Input from "./Input";
 
 
 function Login(){
@@ -53,16 +54,20 @@ function Login(){
                 {error}
             </div> : null}
 
-            <div className="form-group">
+            <Input label="Username" type="text" value={name} 
+                            onChange={e => setName(e.target.value)} placeholder="Enter the Name"/>
+            {/* <div className="form-group">
                 <label>Username</label>
                 <input className="form-control" type="text" value={name} 
                                                 onChange={e => setName(e.target.value)}/>
-            </div>
-            <div className="form-group">
+            </div> */}
+            <Input label="Password" type="password" value={password} 
+                        onChange={e=> setPassword(e.target.value)} placeholder="*************" />
+            {/* <div className="form-group">
                 <label>Password</label>
                 <input className="form-control" type="password" 
                                                 value={password} onChange={e=> setPassword(e.target.value)}/>
-            </div>
+            </div> */}
             <div>
                 <button className="btn btn-success" onClick={handleLogin}>Login</button>
             </div>
