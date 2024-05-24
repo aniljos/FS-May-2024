@@ -1,5 +1,8 @@
 package com.dbs.appservices.model;
 
+
+
+
 public class Customer {
 
     private int id;
