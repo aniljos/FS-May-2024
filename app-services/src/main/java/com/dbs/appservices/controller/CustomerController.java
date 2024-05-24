@@ -23,7 +23,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository repository;
 
-    @RequestMapping
+    @RequestMapping(method = RequestMethod.GET)
     public List<Customer> fetchCustomers(){
         return repository.findAll();
     }
