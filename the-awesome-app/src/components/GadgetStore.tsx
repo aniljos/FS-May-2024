@@ -20,7 +20,7 @@ const GadgetStore: React.FC = () => {
     async function getProducts() {
 
         try {
-            const response = await axios.get<Product[]>('http://localhost:9000/products');
+            const response = await axios.get<Product[]>('http://localhost:9040/products');
             const data = response.data;
             setProducts(data);
         } catch (error) {
